@@ -1,4 +1,4 @@
-package com.truecaller
+package com.callmonitor
 
 import android.app.Application
 import com.facebook.react.PackageList
