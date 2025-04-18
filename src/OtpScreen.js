@@ -45,9 +45,9 @@ const OtpScreen = ({route, navigation}) => {
           size={50}
           onPress={() => navigation.navigate('Numberlog')}
         />
-        <Text style={styles.title}>What’s the code?</Text>
+        <Text style={styles.title}>What&apos;s the code?</Text>
         <Text style={styles.subtitle}>
-          Enter the code sent to +91 {mobileNumber}
+          Enter the code sent to +1 {mobileNumber}
         </Text>
       </View>
       <View style={styles.main}>

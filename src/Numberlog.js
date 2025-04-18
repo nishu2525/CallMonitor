@@ -21,12 +21,12 @@ const Numberlog = ({navigation}) => {
     </View>
         <View style={styles.header2}>
     <AntDesignarrow name={'arrowleft'} color="white" size={50}  onPress={() => navigation.navigate('Signup')}/>
-        <Text style={styles.title}>What’s your number?</Text>
-        <Text style={styles.subtitle}>We’ll text a code to verify your phone.</Text>
+        <Text style={styles.title}>What&apos;s your number?</Text>
+        <Text style={styles.subtitle}>We&apos;ll text a code to verify your phone.</Text>
         </View>
     <View style={styles.main}>
     <Text style={styles.name1}>Mobile Number</Text>
-    <Text style={styles.name2}>+91</Text>
+    <Text style={styles.name2}>+1</Text>
       <InputField
         value={mobileNumber}
         keyboardType="numeric"
@@ -46,7 +46,7 @@ const Numberlog = ({navigation}) => {
         <View style={styles.modalBackground}>
             <View style={styles.modalContainer}>
                 <Text  style={styles.modalHeader}>Start with phone number:</Text>
-                <Text style={styles.phoneNumber}>+91 {mobileNumber}</Text>
+                <Text style={styles.phoneNumber}>+1 {mobileNumber}</Text>
                 <Text  style={styles.modalText}>We will send the authentication code
                 to the phone number you entered.</Text>
                 <Text style={styles.modalText}>Do you want continue?</Text>
