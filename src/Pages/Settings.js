@@ -7,9 +7,11 @@ import {
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
+import IcoN from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
-const Settings = () => {
+
+const Settings = ({ navigation }) => {
 
   const settingsOptions = [
     { icon: 'settings-outline', label: 'General' },
@@ -18,18 +20,32 @@ const Settings = () => {
     { icon: 'server-outline', label: 'Data & Storage' },
     { icon: 'chatbubble-outline', label: 'Messaging' },
     { icon: 'ban-outline', label: 'Block' },
+    { icon: 'server-security' , label:'cyber security', route: 'CyberSecurity'},
+    { icon: 'location-outline', label: 'live location', route: 'ShareLocation' },
     { icon: 'color-palette-outline', label: 'Appearance' },
     { icon: 'cloud-upload-outline', label: 'Backup' },
     { icon: 'lock-closed-outline', label: 'Privacy Center' },
     { icon: 'information-circle-outline', label: 'About' },
+
   ];
 
+
+  const renderIcon = (iconName) => {
+    if (iconName === 'server-security') {
+      return <IcoN name={iconName} size={25} color="#000" />;
+    } else {
+      return <Icon name={iconName} size={25} color="#000" />;
+    }
+  };
+
   return (
+
+    
   <View style={styles.settingsList}>
    {settingsOptions.map((item, index) => (
-     <TouchableOpacity key={index} style={styles.settingItem}>
+     <TouchableOpacity key={index} style={styles.settingItem} onPress={() => navigation.navigate(item.route)}>
        <View style={styles.settingIcon}>
-         <Icon name={item.icon} size={25} color="#000" />
+           {renderIcon(item.icon)}
        </View>
        <Text style={styles.settingLabel}>{item.label}</Text>
        <Icon name="chevron-forward-outline" size={25} color="#ccc" />
@@ -55,12 +71,14 @@ const styles = StyleSheet.create({
   },
   settingIcon: {
     width: 30,
+    
   },
   settingLabel: {
     fontSize: 18,
     flex: 1,
     marginLeft: 15,
     color : '#111',
+    textTransform:'capitalize'
   },
 });
 

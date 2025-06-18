@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {
+  Image,
     Modal,
     StyleSheet,
     Text,
@@ -11,6 +12,9 @@ import InputField from './components/InputField ';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AntDesignarrow from 'react-native-vector-icons/AntDesign';
 const Numberlog = ({navigation}) => {
+  const flag = require('./assets/canadaflag.jpg');
+  const background = require('./assets/cnTower.png');
+
   const [mobileNumber, setMobileNumber] = useState('');
   const [isModalVisible,setIsModalVisible] = useState(false);
 
@@ -26,16 +30,20 @@ const Numberlog = ({navigation}) => {
         </View>
     <View style={styles.main}>
     <Text style={styles.name1}>Mobile Number</Text>
+    <View style={styles.ipt}>
+    <Image source={flag} style={styles.flag}/>
     <Text style={styles.name2}>+1</Text>
+    </View>
       <InputField
         value={mobileNumber}
         keyboardType="numeric"
         onChangeText={(text) => setMobileNumber(text)}
-        inputStyle={{ paddingLeft: 60 }} 
+        inputStyle={{ paddingLeft: 90 , marginTop: 15}} 
       />
        <TouchableOpacity style={styles.loginButton} onPress={()=>setIsModalVisible(true)}>
           <Text style={styles.loginButtonText} onPress={()=>setIsModalVisible(true)}>Next</Text>
         </TouchableOpacity>
+        <Image source={background} style={styles.bg}/>
         </View>
 
         <Modal
@@ -137,26 +145,20 @@ const styles = StyleSheet.create({
         color:'#9e90bb',
       },
       name2:{
-        position:'absolute',
-        top:67,
-        left:5,
         zIndex:2,
-        fontSize:24,
-        backgroundColor:'#fff',
-        marginLeft:20,
+        fontSize:26,
         padding:8,
         color:'#9e90bb',
-        paddingRight:-1,
         },
         loginButton: {
             backgroundColor:'#4B0082',
             paddingVertical: 15,
             alignItems: 'center',
             borderRadius: 30,
-            marginVertical: 20,
+            // marginVertical: 20,
             marginHorizontal:'20%',
             paddingHorizontal:25,
-            marginTop:150,
+            // marginTop:150,
           },
           loginButtonText: {
             color: '#fff',
@@ -222,13 +224,33 @@ const styles = StyleSheet.create({
           },
           buttonText: {
             color:'#fff',
-             fontSize: 18,
+            fontSize: 18,
             fontWeight: 'bold',
           },
           buttonText2 :{
             fontWeight: 'bold',
              fontSize: 18,
             color:'#462C77',
+          },
+          flag:{
+            height:40,
+            width:40,
+          },
+          ipt:{
+            flexDirection: 'row', 
+          alignItems: 'center',
+          position:'absolute',
+            top:67,
+            left:25,
+          },
+          bg:{
+            height:150,
+            width:350,
+            flex:1,
+            marginLeft:'5%',
+            marginTop:'5%',
+            marginBottom:'-3%',
+            opacity:0.3,
           },
 });
 

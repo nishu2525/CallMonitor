@@ -7,7 +7,7 @@ import ShareIcon from 'react-native-vector-icons/Feather';
 
 const Invite = () => {
   const inviteMessage =
-    'Hey! Check out this cool CallerID app: click below to download';
+    'Hey! Check out this cool Call Monitor app: click below to download';
   const inviteLink = 'https://www.google.com';
 
   const onShare = async () => {
@@ -29,7 +29,7 @@ const Invite = () => {
     <View style={styles.container}>
       <Image source={invite} style={styles.img} />
       <Text style={styles.text1}>
-        Free upgrade to Premium for 1 week when your friends install CallerID
+        Free upgrade to Premium for 1 week when your friends install Call Monitor
       </Text>
       <Text style={styles.text2}>
         Premium badge, see who viewed your profile, remove all ads and more.

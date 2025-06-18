@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import {StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {Image, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import Header from './components/Header';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AntDesignarrow from 'react-native-vector-icons/AntDesign';
@@ -11,6 +11,7 @@ const OtpScreen = ({route, navigation}) => {
     const [timer, setTimer] = useState(30);
     const [otp, setOtp] = useState(['', '', '', '']);
   const {mobileNumber} = route.params;
+  const background = require('./assets/cnTower.png');
 
   useEffect(() => {
     if (timer > 0) {
@@ -73,9 +74,11 @@ const OtpScreen = ({route, navigation}) => {
             <Text style={styles.resenBtn2}>{timer}</Text>
           </View>
         </View>
+                <Image source={background} style={styles.bg}/>
         <TouchableOpacity style={styles.loginButton}   onPress={() => navigation.navigate('Home', { screen: 'Latest' })}>
           <Text style={styles.loginButtonText} >Next</Text>
         </TouchableOpacity>
+        
       </View>
     </View>
   );
@@ -190,6 +193,15 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     textDecorationLine: 'underline',
     textDecorationColor: '#4B0082',
+  },
+  bg:{
+    height:350,
+    width:350,
+    flex:1,
+    // marginLeft:'%',
+    marginTop:'-70%',
+    // marginBottom:'-3%',
+    opacity:0.3,
   },
 });
 

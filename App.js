@@ -26,6 +26,8 @@ import OutgoingCall from './src/contacts/OutgoingCall';
 import MissedCall from './src/contacts/MissedCall';
 import MenuButton from './src/components/MenuButton';
 import SplashScreen from 'react-native-splash-screen';
+import CyberSecurity from './src/Pages/CyberSecurity';
+import ShareLocation from './src/Pages/ShareLocation';
 
 
 
@@ -157,7 +159,7 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
       SplashScreen.hide();
-    }, 1500);
+    }, 2200);
   }, []);
   
   useEffect(() => {
@@ -217,11 +219,6 @@ const App = () => {
             },
             headerTintColor: '#fff',
           }}>
-          {/* <Stack.Screen
-            name="Splash"
-            component={Splash}
-            options={{headerShown: false}}
-          /> */}
           <Stack.Screen
             name="Signin"
             component={Signin}
@@ -289,6 +286,22 @@ const App = () => {
             component={Settings}
             options={{
               title: 'Settings',
+              headerBackVisible: true,
+            }}
+          />
+           <Stack.Screen
+            name="CyberSecurity"
+            component={CyberSecurity}
+            options={{
+              title: 'Cyber Security',
+              headerBackVisible: true,
+            }}
+          />
+          <Stack.Screen
+            name="ShareLocation"
+            component={ShareLocation}
+            options={{
+              title: 'Share Location',
               headerBackVisible: true,
             }}
           />
